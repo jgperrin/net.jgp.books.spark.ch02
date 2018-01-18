@@ -1,4 +1,4 @@
-package net.jgp.books.sparkWithJava.ch01;
+package net.jgp.books.sparkWithJava.ch02;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -26,7 +26,7 @@ public class CsvToDataframeApp {
     private void start() {
         // Creates a session on a local master
         SparkSession spark = SparkSession.builder()
-                .appName("CSV to Dataset")
+                .appName("CSV to DB")
                 .master("local")
                 .getOrCreate();
 
