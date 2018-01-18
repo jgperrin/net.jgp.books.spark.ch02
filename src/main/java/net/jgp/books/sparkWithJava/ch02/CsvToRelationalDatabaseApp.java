@@ -5,18 +5,18 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
 /**
- * CSV ingestion in a dataframe.
+ * CSV to a relational database.
  * 
  * @author jperrin
  */
-public class CsvToDataframeApp {
+public class CsvToRelationalDatabaseApp {
 
 	/**
 	 * main() is your entry point to the application. 
 	 * @param args
 	 */
     public static void main(String[] args) {
-        CsvToDataframeApp app = new CsvToDataframeApp();
+        CsvToRelationalDatabaseApp app = new CsvToRelationalDatabaseApp();
         app.start();
     }
 
