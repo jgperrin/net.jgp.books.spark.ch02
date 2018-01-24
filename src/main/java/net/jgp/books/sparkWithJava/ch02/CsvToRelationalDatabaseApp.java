@@ -13,7 +13,7 @@ import org.apache.spark.sql.SparkSession;
 /**
  * CSV to a relational database.
  * 
- * @author jperrin
+ * @author jgp
  */
 public class CsvToRelationalDatabaseApp {
 
@@ -23,8 +23,7 @@ public class CsvToRelationalDatabaseApp {
    * @param args
    */
   public static void main(String[] args) {
-    CsvToRelationalDatabaseApp app =
-        new CsvToRelationalDatabaseApp();
+    CsvToRelationalDatabaseApp app = new CsvToRelationalDatabaseApp();
     app.start();
   }
 
@@ -41,7 +40,8 @@ public class CsvToRelationalDatabaseApp {
     // Step 1: Ingestion
     // ---------
 
-    // Reads a CSV file with header, called books.csv, stores it in a dataframe
+    // Reads a CSV file with header, called authors.csv, stores it in a
+    // dataframe
     Dataset<Row> df = spark.read()
         .format("csv")
         .option("header", "true")
