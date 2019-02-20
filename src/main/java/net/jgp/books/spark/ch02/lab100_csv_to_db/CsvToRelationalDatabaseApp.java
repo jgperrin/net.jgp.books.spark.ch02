@@ -1,4 +1,4 @@
-package net.jgp.books.sparkWithJava.ch02;
+package net.jgp.books.spark.ch02.lab100_csv_to_db;
 
 import static org.apache.spark.sql.functions.concat;
 import static org.apache.spark.sql.functions.lit;
