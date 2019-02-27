@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>net.jgp.books</groupId>
-  <artifactId>sparkWithJava-chapter02</artifactId>
+  <artifactId>spark-chapter02</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -90,7 +90,7 @@
             <argument>-Dlog4j.configuration=file:src/main/java/log4j.properties</argument>
             <argument>-classpath</argument>
             <classpath />
-            <argument>net.jgp.books.sparkWithJava.ch02.CsvToRelationalDatabaseApp</argument>
+            <argument>net.jgp.books.spark.ch02.CsvToRelationalDatabaseApp</argument>
           </arguments>
         </configuration>
       </plugin>
