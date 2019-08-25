@@ -59,7 +59,8 @@ public class CsvToRelationalDatabaseApp {
     // Step 3: Save
     // ----
 
-    // The connection URL, assuming your PostgreSQL instance runs locally on the
+    // The connection URL, assuming your PostgreSQL instance runs locally on
+    // the
     // default port, and the database we use is "spark_labs"
     String dbConnectionUrl = "jdbc:postgresql://localhost/spark_labs";
 
