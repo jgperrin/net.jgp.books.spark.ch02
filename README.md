@@ -10,3 +10,28 @@ Notes:
 ---
 
 Follow me on Twitter to get updates about the book and Apache Spark: [@jgperrin](https://twitter.com/jgperrin). Join the book's community on [Facebook](https://www.facebook.com/SparkWithJava/) or in [Manning's community site](https://forums.manning.com/forums/spark-in-action-second-edition?a_aid=jgp).
+
+
+
+It explains how to run Pyspark/Python application
+
+    1. Clone this project
+      Assume that cloned this project to ${MY_HOME_DIR}
+
+    2. cd ${MY_HOME_DIR}/src/main/python
+
+    3. Execute the following spark-submit command to create a jar file to our this application
+    ```
+    spark-submit net/jgp/books/spark/ch02/lab100_csv_to_db/csvToRelationalDatabaseApp.py
+    ```
+It explains how to run Pyspark/Python application
+
+    1. Clone this project
+       Assume that cloned this project to ${MY_HOME_DIR}
+
+    2. cd ${MY_HOME_DIR}/src/main/scala
+
+    3. Execute the following spark-submit command to create a jar file to our this application
+    ```
+    spark-submit net.jgp.books.spark.ch02.lab100_csv_to_db.Csv2RelationalDatabaseApp
+    ```
