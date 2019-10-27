@@ -14,7 +14,7 @@ spark = SparkSession.builder.appName("CSV to DB").master("local").getOrCreate()
 #  ---------
 #
 #  Reads a CSV file with header, called authors.csv, stores it in a dataframe
-df = spark.read().format("csv").option("header", "true").load("../../../data/authors.csv")
+df = spark.read.csv(header=True, inferSchema=True, path="/Users/ram/SparkInAction2Ed/Code/net.jgp.books.spark.ch02/data/authors.csv")
 
 # Step 2: Transform
 # ---------
@@ -33,9 +33,9 @@ dbConnectionUrl = "jdbc:postgresql://localhost/spark_labs"
 prop = {"driver":"org.postgresql.Driver", "user":"jgp", "password":"Spark<3Java"}
 
 # Write in a table called ch02
-df.write().mode('overwrite').jdbc(dbConnectionUrl, "ch02", prop)
+df.write.jdbc(mode='overwrite', url=dbConnectionUrl, table="ch02", properties=prop)
 
 # Good to stop SparkSession at the end of the application
-spark.stop
+spark.stop()
 
 print("Process complete")

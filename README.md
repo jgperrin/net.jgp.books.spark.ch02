@@ -4,6 +4,10 @@ The examples in this repository are support to the **[Spark in Action, 2nd editi
 
 Welcome to Spark with Java, chapter 2. As we are building our mental model around Spark processing, we need a small but efficient example that does a whole flow.
 
+## Running the lab in Java
+
+For information on running the Java lab, see chapter 1 in [Spark in Action, 2nd edition](http://jgp.net/sia).
+
 
 ## Running PySpark
 
