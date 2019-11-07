@@ -12,19 +12,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <scala.version>2.11</scala.version>
-    <scala.full.version>2.11.11</scala.full.version>
     <spark.version>2.4.4</spark.version>
     <postgresql.version>42.1.4</postgresql.version>
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
   </properties>
 
   <dependencies>
-    <!-- Scala Language Library -->
-    <dependency>
-        <groupId>org.scala-lang</groupId>
-        <artifactId>scala-library</artifactId>
-        <version>${scala.full.version}</version>
-    </dependency>
     <!-- Spark -->
     <dependency>
       <groupId>org.apache.spark</groupId>
@@ -98,22 +91,6 @@
             <classpath />
             <argument>net.jgp.books.spark.ch02.CsvToRelationalDatabaseApp</argument>
           </arguments>
-        </configuration>
-      </plugin>
-      <!--To enable scala features in a java project-->
-      <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <version>4.2.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <scalaVersion>${scala.full.version}</scalaVersion>
         </configuration>
       </plugin>
     </plugins>

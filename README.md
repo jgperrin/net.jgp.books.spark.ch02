@@ -48,13 +48,13 @@ You will need:
 3. Package application using sbt command
 
    ```
-      sbt clean package
+      sbt clean assembly
    ```
 
 4. Run Spark/Scala application using spark-submit command as shown below:
    
     ```
-    spark-submit --class net.jgp.books.spark.ch02.lab100_csv_to_db.Csv2RelationalDatabaseApp target/scala-2.11/sparkinaction2-chapter02_2.11-1.0.0.jar
+    spark-submit --class net.jgp.books.spark.ch02.lab100_csv_to_db.Csv2RelationalDatabaseApp target/scala-2.11/SparkInAction2-Chapter02-assembly-1.0.0.jar
     ```
 
 Notes: 
