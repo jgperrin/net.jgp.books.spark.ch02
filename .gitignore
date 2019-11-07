@@ -28,5 +28,6 @@ hs_err_pid*
 *.DS_Store
 .idea/*
 *.iml
-target/*.*
-project/target/*.*
+target/*
+project/target/*
+project/project/*
