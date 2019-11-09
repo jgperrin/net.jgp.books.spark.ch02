@@ -5,7 +5,12 @@
 '''
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import concat,col,lit
+from pyspark.sql import functions as F
+import os
+
+current_dir = os.path.dirname(__file__)
+relative_path = "../../../../data/authors.csv"
+absolute_file_path = os.path.join(current_dir, relative_path)
 
 # Creates a session on a local master
 spark = SparkSession.builder.appName("CSV to DB").master("local").getOrCreate()
@@ -14,13 +19,13 @@ spark = SparkSession.builder.appName("CSV to DB").master("local").getOrCreate()
 #  ---------
 #
 #  Reads a CSV file with header, called authors.csv, stores it in a dataframe
-df = spark.read.csv(header=True, inferSchema=True, path="/Users/ram/SparkInAction2Ed/Code/net.jgp.books.spark.ch02/data/authors.csv")
+df = spark.read.csv(header=True, inferSchema=True, path=absolute_file_path)
 
 # Step 2: Transform
 # ---------
 # Creates a new column called "name" as the concatenation of lname, a
 # virtual column containing ", " and the fname column
-df = df.withColumn("name", concat(col("lname"), lit(", "), col("fname")))
+df = df.withColumn("name", F.concat(F.col("lname"), F.lit(", "), F.col("fname")))
 
 # Step 3: Save
 # ----
@@ -37,5 +42,3 @@ df.write.jdbc(mode='overwrite', url=dbConnectionUrl, table="ch02", properties=pr
 
 # Good to stop SparkSession at the end of the application
 spark.stop()
-
-print("Process complete")

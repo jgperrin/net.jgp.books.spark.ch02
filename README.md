@@ -10,6 +10,7 @@ For information on running the Java lab, see chapter 1 in [Spark in Action, 2nd 
 
 
 ## Running the lab using PySpark
+
 Prerequisites:
 
 You will need:
