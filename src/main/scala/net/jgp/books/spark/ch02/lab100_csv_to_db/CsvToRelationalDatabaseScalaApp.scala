@@ -11,7 +11,7 @@ import org.apache.spark.sql.functions.{concat, lit, col}
   *
   * @author rambabu.posa
   */
-object Csv2RelationalDatabaseApp {
+object CsvToRelationalDatabaseScalaApp {
 
   /**
     * main() is your entry point to the application.
