@@ -6,7 +6,7 @@ Welcome to Spark with Java, chapter 2. As we are building our mental model aroun
 
 ## Running the lab in Java
 
-For information on running the Java lab, see chapter 1 in [Spark in Action, 2nd edition](http://jgp.net/sia).
+For information on running the Java lab, see chapter 2 in [Spark in Action, 2nd edition](http://jgp.net/sia).
 
 
 ## Running the lab using PySpark
