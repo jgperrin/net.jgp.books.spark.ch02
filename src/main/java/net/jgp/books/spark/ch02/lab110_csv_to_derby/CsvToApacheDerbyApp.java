@@ -86,12 +86,13 @@ public class CsvToApacheDerbyApp {
     df = df.withColumn(
         "name",
         concat(df.col("lname"), lit(", "), df.col("fname")));
+    System.out.println("Result in a dataframe:");
+    df.show();
 
     // Step 3: Save
     // ----
     // The connection URL, assuming your PostgreSQL instance runs locally on
-    // the
-    // default port, and the database we use is "spark_labs"
+    // the default port, and the database we use is "spark_labs"
 
     // Properties to connect to the database, the JDBC driver is part of our
     // pom.xml
@@ -105,9 +106,16 @@ public class CsvToApacheDerbyApp {
         .mode(SaveMode.Overwrite)
         .jdbc(dbConnectionUrl, "ch02", prop);
 
-    System.out.println("Load Database Process complete");
+    System.out.println("Load Database process complete");
   }
 
+  /**
+   * Tests the database output...
+   * 
+   * @param dbUrl
+   * @param dbUser
+   * @param dbPassword
+   */
   private void testDatabase(String dbUrl, String dbUser, String dbPassword) {
     Connection conn = null;
     Statement stmt = null;
@@ -116,19 +124,19 @@ public class CsvToApacheDerbyApp {
       Class.forName(JDBC_DRIVER);
 
       // STEP 3: Open a connection
-      System.out.println("Connecting to database...");
+      System.out.println("Connecting to Derby");
       conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
       // STEP 4: Execute a query
-      System.out.println("Creating statement...");
       stmt = conn.createStatement();
-      String sql;
-      sql = "SELECT * FROM ch02";
+
       // STEP 5: Extract data from result set
-      try (ResultSet rs = stmt.executeQuery(sql)) {
-        printResults(rs);
-        // STEP 6: Clean-up environment
-      }
+      System.out.println("Result in Derby:");
+      String sql = "SELECT * FROM ch02";
+      ResultSet rs = stmt.executeQuery(sql);
+      printResults(rs);
+
+      // STEP 6: Clean-up environment
       stmt.close();
       conn.close();
     } catch (SQLException | ClassNotFoundException se) {

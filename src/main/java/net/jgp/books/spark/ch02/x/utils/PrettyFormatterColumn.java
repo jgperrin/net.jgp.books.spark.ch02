@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class PrettyFormatterColumn {
   private static  Logger log = LoggerFactory.getLogger(PrettyFormatterColumn.class);
 
-  private int maxColumnWidth = 20;
+  private int maxColumnWidth = 24;
   private String columnName;
   private boolean isString;
   private int columnWidth = 0;

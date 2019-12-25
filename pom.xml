@@ -14,7 +14,7 @@
     <scala.version>2.11</scala.version>
     <spark.version>2.4.4</spark.version>
     <postgresql.version>42.1.4</postgresql.version>
-    <derby.version>10.6.2.1</derby.version>
+    <derby.version>10.14.2.0</derby.version>
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
   </properties>
 
