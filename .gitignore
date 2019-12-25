@@ -31,3 +31,4 @@ hs_err_pid*
 target/*
 project/target/*
 project/project/*
+/spark_labs/
