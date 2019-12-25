@@ -19,6 +19,8 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
+import net.jgp.books.spark.ch02.x.utils.PrettyFormatter;
+
 /**
  * CSV to a relational database.
  *
@@ -125,7 +127,6 @@ public class CsvToApacheDerbyApp {
       // STEP 5: Extract data from result set
       try (ResultSet rs = stmt.executeQuery(sql)) {
         printResults(rs);
-        printResults2(rs);
         // STEP 6: Clean-up environment
       }
       stmt.close();
@@ -160,56 +161,9 @@ public class CsvToApacheDerbyApp {
    * @throws SQLException
    */
   private void printResults(ResultSet rs) throws SQLException {
-    ArrayList<String> columnNames = new ArrayList<>();
-    if (rs != null) {
-      ResultSetMetaData columns = rs.getMetaData();
-      int i = 0;
-      while (i < columns.getColumnCount()) {
-        i++;
-        System.out.print(columns.getColumnName(i) + "\t\t");
-        columnNames.add(columns.getColumnName(i));
-      }
-      System.out.print("\n");
-
-      while (rs.next()) {
-        for (i = 0; i < columnNames.size(); i++) {
-          System.out.print(rs.getString(columnNames.get(i))
-              + "\t\t");
-
-        }
-        System.out.print("\n");
-      }
-    }
-  }
-
-  /**
-   * Prints the results from the resultset
-   * 
-   * @param rs
-   * @throws SQLException
-   */
-  private void printResults2(ResultSet rs) throws SQLException {
-    ArrayList<String> columnNames = new ArrayList<>();
-    if (rs != null) {
-      ResultSetMetaData columns = rs.getMetaData();
-      int i = 0;
-      while (i < columns.getColumnCount()) {
-        i++;
-        System.out.print(columns.getColumnName(i) + "\t\t");
-        columnNames.add(columns.getColumnName(i));
-      }
-      System.out.print("\n");
-
-      while (rs.next()) {
-        for (i = 0; i < columnNames.size(); i++) {
-          System.out.print(rs.getString(columnNames.get(i))
-              + "\t\t");
-
-        }
-        System.out.print("\n");
-      }
-
-    }
+    PrettyFormatter pf = new PrettyFormatter();
+    pf.set(rs);
+    pf.show();
 
   }
 }
