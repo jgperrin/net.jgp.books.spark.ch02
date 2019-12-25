@@ -14,10 +14,10 @@ Each chapter has one or more labs. Labs are examples used for teaching in the bo
 
 The `CsvToDatabaseApp` application does the following:
 
- 1.      It acquires a session (a `SparkSession`).
- 1.      It asks Spark to load (ingest) a dataset in CSV format.
+ 1. The app acquires a session (a `SparkSession`).
+ 1. It then asks Spark to load (ingest) a dataset in CSV format.
  1. Spark performs a small transformation.
- 1.      Spark stores the result in a database, in this example it is PostgreSQL.
+ 1. Spark stores the result in a database, in this example, it is PostgreSQL.
 
 ### Lab \#110
 
