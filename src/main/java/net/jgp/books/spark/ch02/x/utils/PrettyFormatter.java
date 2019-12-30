@@ -15,7 +15,8 @@ import org.slf4j.LoggerFactory;
  * @author jgp
  */
 public class PrettyFormatter {
-  private static Logger log = LoggerFactory.getLogger(PrettyFormatter.class);
+  private static Logger log =
+      LoggerFactory.getLogger(PrettyFormatter.class);
 
   private ResultSet resultSet;
   private boolean updated = false;
@@ -84,7 +85,7 @@ public class PrettyFormatter {
     String rowSeparator = "";
     for (int i = 0; i < columnCount; i++) {
       pfc = columns.get(i);
-      columnHeading = columnHeading + "|" + pfc          .getColumnName();
+      columnHeading = columnHeading + "|" + pfc.getColumnName();
       rowSeparator = rowSeparator + "+" + pfc.getDashes();
     }
 

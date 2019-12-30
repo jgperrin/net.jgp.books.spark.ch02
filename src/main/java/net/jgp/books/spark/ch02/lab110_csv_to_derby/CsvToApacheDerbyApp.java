@@ -28,7 +28,8 @@ import net.jgp.books.spark.ch02.x.utils.PrettyFormatter;
  */
 public class CsvToApacheDerbyApp {
 
-  private static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";;
+  private static final String JDBC_DRIVER =
+      "org.apache.derby.jdbc.ClientDriver";;
 
   /**
    * main() is your entry point to the application.
@@ -42,12 +43,14 @@ public class CsvToApacheDerbyApp {
     String password = "adminpass";
     String dbHost = "localhost";
     int dbPort = 1527;
-    String dbConnectionUrl = "jdbc:derby://" + dbHost + ":" + dbPort + "/spark_labs;create=true";
+    String dbConnectionUrl =
+        "jdbc:derby://" + dbHost + ":" + dbPort + "/spark_labs;create=true";
 
     try {
       app.startDatabase(dbHost, dbPort);
     } catch (Exception e) {
-      System.out.println("Could not initiate database, stopping: " + e.getMessage());
+      System.out.println(
+          "Could not initiate database, stopping: " + e.getMessage());
       return;
     }
     app.start(dbConnectionUrl, user, password);
@@ -56,7 +59,8 @@ public class CsvToApacheDerbyApp {
 
   private void startDatabase(String dbHost, int dbPort) throws Exception {
     // Starts Apache Derby server
-    NetworkServerControl server = new NetworkServerControl(InetAddress.getByName(dbHost), dbPort);
+    NetworkServerControl server =
+        new NetworkServerControl(InetAddress.getByName(dbHost), dbPort);
     server.start(null);
   }
 
@@ -116,7 +120,8 @@ public class CsvToApacheDerbyApp {
    * @param dbUser
    * @param dbPassword
    */
-  private void testDatabase(String dbUrl, String dbUser, String dbPassword) {
+  private void testDatabase(String dbUrl, String dbUser,
+      String dbPassword) {
     Connection conn = null;
     Statement stmt = null;
     try {
