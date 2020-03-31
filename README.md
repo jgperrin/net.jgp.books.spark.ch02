@@ -19,6 +19,23 @@ The `CsvToDatabaseApp` application does the following:
  1. Spark performs a small transformation.
  1. Spark stores the result in a database, in this example, it is PostgreSQL.
 
+To create the PostgreSQL database, you can use the following SQL commands:
+
+    CREATE ROLE jgp WITH
+        LOGIN
+        NOSUPERUSER
+        NOCREATEDB
+        NOCREATEROLE
+        INHERIT
+        NOREPLICATION
+        CONNECTION LIMIT -1
+        PASSWORD 'Spark<3Java';
+    CREATE DATABASE spark_labs
+        WITH 
+        OWNER = jgp
+        ENCODING = 'UTF8'
+        CONNECTION LIMIT = -1;
+
 ### Lab \#110
 
 The `CsvToApacheDerbyApp` application is similar to lab \#100, however, instead of using PostgreSQL, it uses [Apache Derby](https://db.apache.org/derby/).
