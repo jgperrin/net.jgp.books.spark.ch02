@@ -92,7 +92,7 @@ You will need:
 
 4. Run Spark/Scala application using spark-submit command as shown below:
 
-    spark-submit --class net.jgp.books.spark.ch02.lab100_csv_to_db.CsvToRelationalDatabaseScalaApp target/scala-2.11/SparkInAction2-Chapter02-assembly-1.0.0.jar
+    spark-submit --class net.jgp.books.spark.ch02.lab100_csv_to_db.CsvToRelationalDatabaseScalaApp target/scala-2.12/SparkInAction2-Chapter02-assembly-1.0.0.jar
 
 Notes: 
  1. [Java] Due to renaming the packages to match more closely Java standards, this project is not in sync with the book's MEAP prior to v10 (published in April 2019).
