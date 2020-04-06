@@ -2,9 +2,9 @@ name := "SparkInAction2-Chapter02"
 
 version := "1.0.0"
 
-scalaVersion := "2.11.11"
+scalaVersion := "2.12.10"
 
-val sparkVersion = "2.4.4"
+val sparkVersion = "3.0.0-preview2"
 
 val postgresqlVersion = "42.1.4"
 
@@ -14,8 +14,8 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion,
-  "org.apache.spark" %% "spark-sql" % sparkVersion,
-  "org.postgresql" % "postgresql" % postgresqlVersion
+  "org.apache.spark" %% "spark-sql"  % sparkVersion,
+  "org.postgresql"   % "postgresql"  % postgresqlVersion
 )
 
 assemblyMergeStrategy in assembly := {
