@@ -96,9 +96,14 @@ You will need:
 
     spark-submit --class net.jgp.books.spark.ch02.lab100_csv_to_db.CsvToRelationalDatabaseScalaApp target/scala-2.12/SparkInAction2-Chapter02-assembly-1.0.0.jar
 
-Notes: 
+## News
+ 1. [2020-06-07] Updated the pom.xml to support Apache Spark v3.1.2. 
+ 1. [2020-06-07] As we celebrate the first anniversary of Spark in Action, 2nd edition is the best-rated Apache Spark book on [Amazon](https://amzn.to/2TPnmOv). 
+
+## Notes:
  1. [Java] Due to renaming the packages to match more closely Java standards, this project is not in sync with the book's MEAP prior to v10 (published in April 2019).
- 2. [Scala, Python] As of MEAP v14, we have introduced Scala and Python examples (published in October 2019).
+ 1. [Scala, Python] As of MEAP v14, we have introduced Scala and Python examples (published in October 2019).
+  1. The master branch contains the last version of the code running against the latest supported version of Apache Spark. Look in specifics branches for specific versions.
  
 ---
 
